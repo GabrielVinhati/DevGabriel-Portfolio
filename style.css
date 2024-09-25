@@ -1,0 +1,453 @@
+
+
+/* Estilo geral*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    
+    
+}
+
+.logo img{
+    height: 150px;
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+h2.titulo{
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: #fc1400;
+}
+
+button:hover, form .g-enviar input:hover{
+    box-shadow: 0px 0px 8px red;
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+
+/* Estilo do cabeçalho */
+header{
+    padding: 40px 4%;
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: rgb(114, 111, 111);
+    text-decoration: none;
+    display: inline-block;
+}
+header a:hover{
+    color: white;
+    transform: scale(1.10);
+    transition: .2s;
+}
+header nav ul{
+    list-style-type: none;
+}
+header nav.menu-desktop ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.g-abrir-menu{
+    display: none;
+}
+
+/*Estilo menu mobile*/
+
+.g-abrir-menu i{
+    color: #fc1400;
+    font-size: 40px;
+}
+
+.overlay-menu{
+    background-color: rgba(0, 0, 0, 0.692);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+    display: none;
+}
+
+.menu-mobile{
+    background-color: #000000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-mobile .g-fechar i{
+    color: white;
+    font-size: 30px;
+}
+.menu-mobile .g-fechar{
+    padding: 20px 5%;
+}
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 10%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover{
+    background-color: #fc1400;
+    color: black;
+    font-weight: 500;
+}
+
+/*Estilo menu mobile fim*/
+
+/* Estilo do topo do site */
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1{
+    color: white;
+    font-size: 40px;
+}
+.topo-do-site .txt-topo-site h1 span{
+    color: #fc1400;
+    font-size: 80px;
+}
+.topo-do-site .txt-topo-site p{
+    color: white;
+    margin: 30px 0;
+}
+/*botoes*/
+.g-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #fc1400;
+   border: 0;
+   border-radius: 30px;
+   cursor: pointer;
+   transition: .2s;
+
+}
+.g-contato button:hover{
+    box-shadow: 0px 0px 8px red;
+    transform: scale(1.05);
+}
+/*botoes*/
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+
+/* Estilos das especialidades */
+section.Especialidades{
+    padding: 40px 4%;
+}
+
+section.Especialidades .flex{
+    gap: 60px;
+}
+
+.Especialidades .especialidades-box{
+    color: white;
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 20px;
+
+}
+
+.Especialidades .especialidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #fc1400;
+    transition: .2s;
+}
+.Especialidades .especialidades-box i{
+    font-size: 60px;
+    color: #fc1400;
+}
+
+.Especialidades .especialidades-box h3{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/*Estilo do Sobre*/
+
+.Sobre img{
+    height: 500px; border-radius: 20px;
+}
+
+
+section.Sobre{
+    padding: 80px 4%;
+}
+
+section.Sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.Sobre .txt-sobre{
+    color: white;
+}
+
+.Sobre .txt-sobre h2{
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 30px;
+}
+
+.Sobre .txt-sobre h2 span{
+    color: #fc1400;
+    display: block;
+}
+
+.Sobre .txt-sobre p{
+    margin: 20px 0;
+    text-align: justify;
+}
+.g-social button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fc1400;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+/* ESTILO DO PORTFOLIO*/
+section.portfolio{
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #fc150052;
+}
+
+section.portfolio .flex{
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.img-port{
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+}
+
+.img-port:hover{
+    background-position: 100% 100%;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b7;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    opacity: 0;
+}
+
+.overlay:hover{
+    opacity: 1;
+    transition: .5s;
+}
+
+/* Estilo do Formulario*/
+
+section.formulario{
+    padding: 80px 4%;
+
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 60px;
+}
+
+form input, form textarea{
+    width: 100%;
+    background-color: rgb(49, 49, 49);
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+form textarea{
+    resize: none;
+    max-height: 200px;
+}
+
+form .g-enviar{
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .g-enviar input[type=submit]{
+    width: 120px;
+    background-color: #fc1400;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ESTILO RODAPE */
+
+footer{
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #fc150052;
+}
+
+footer .flex{
+    justify-content: space-between;
+}
+
+footer .line-footer{
+    padding: 20px 0;
+}
+
+.borda{
+    border-top: 2px solid #fc1400;
+}
+
+footer .line-footer p i{
+    color: #fc1400;
+    font-size: 22px;
+}
+
+footer .line-footer p a{
+    color: white;
+}
+
+@media screen and (max-width: 1020px){
+    /*classes gerais*/
+
+    .g-abrir-menu{
+        display: block;
+    }
+
+
+
+    .flex{
+        flex-direction: column;
+    }
+
+    .logo img{
+        height: 80px;
+    }
+
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+
+    /*cabeçalho*/
+    .menu-desktop, .g-contato{
+        display: none;
+    }
+
+    /*IMAGEM DO SOBRE*/
+    .Sobre img{
+        padding: 20px;
+        border-radius: 50px;
+    }
+    /*portfolio*/
+    section.portfolio{
+        padding: 80px 8%;
+    }
+    .img-port{
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+       }
+
+       section.portfolio .flex{
+        gap: 60px;
+       }
+
+       /*footer */
+       footer .flex{
+        flex-direction: column;
+        gap: 30px;
+       }
+       footer .line-footer{
+        text-align: center;
+       }
+}
