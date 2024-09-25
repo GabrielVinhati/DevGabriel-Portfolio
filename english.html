@@ -188,7 +188,7 @@
             <div class="interface">
                 <h2 class="titulo"> Did you like what you saw? <br><span>Talk to me!! 🙃</span></h2>
 
-                <form method="post" action="envia.php">
+                <form action="https://formsubmit.co/gabriel.vinhati@outlook.com" method="POST">
                     <input type="text" name="nome" id="nome" placeholder="Name: *" required>
                     <input type="text" name="email" id="email" placeholder="Your e-mail: *" required>
                     <input type="text" name="celular" id="celular" placeholder="Your cell phone: ">
@@ -196,7 +196,9 @@
                     <textarea name="mensagem" id="mensagem" placeholder="Your message: *" required></textarea>
                     
                     <div class="g-enviar"><input type="submit" value="SEND"></div>
-
+                    <input type="hidden" name="_subject" value="Novo Contato!">
+                    <input type="text" name="_honey" style="display: none;">
+                    <input type="hidden" name="_captcha" value="false">
                 </form>
             </div><!--interface-->
         </section><!--formulario-->
