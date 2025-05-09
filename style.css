@@ -286,29 +286,35 @@ section.portfolio .flex{
     justify-content: space-around;
     margin-top: 60px;
 }
-
-.img-port{
-    width: 360px;
-    height: 460px;
+.img-port {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
     background-size: cover;
-    background-position: 100% 0%;
-    transition: 8s;
-    cursor: pointer;
-    border-radius: 40px;
+    background-position: center top;
+    background-repeat: no-repeat;
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-position 4s ease-in-out; /* aqui está o scroll suave */
 }
 
-.img-port:hover{
-    background-position: 100% 100%;
+.img-port:hover {
+    background-position: center bottom; /* rola a imagem para baixo */
+    transform: scale(1.05);
 }
-.overlay{
+
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000b7;
-    border-radius: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,12 +322,27 @@ section.portfolio .flex{
     font-weight: 600;
     color: white;
     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.overlay:hover{
+.img-port:hover .overlay {
+    opacity: 1;
+}
+
+
+.img-port .content {
+    position: relative;
+    z-index: 2; /* Certifica que o conteúdo está acima da overlay */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+/* .overlay:hover{
     opacity: 1;
     transition: .5s;
-}
+} */
 
 /* Estilo do Formulario*/
 
@@ -451,3 +472,51 @@ footer .line-footer p a{
         text-align: center;
        }
 }
+.swiper {
+    width: 100%;
+    padding: 40px 0;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .img-port {
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+/* Personalizando as setas de navegação */
+.swiper-button-next, .swiper-button-prev {
+    color: #fc1400; /* Cor das setas */
+    background-color: transparent; /* Fundo transparente para as setas */
+    border: none; /* Remove qualquer borda padrão */
+    font-size: 30px; /* Tamanho das setas (ajuste conforme necessário) */
+  }
+  
+  /* Personalizando as bolinhas da paginação */
+  .swiper-pagination-bullet {
+    background-color: #fc1400; /* Cor da bolinha ativa */
+    opacity: 0.7; /* Opacidade da bolinha */
+    width: 12px; /* Largura da bolinha */
+    height: 12px; /* Altura da bolinha */
+    border-radius: 50%; /* Deixa as bolinhas arredondadas */
+  }
+  
+  /* Mudando a cor da bolinha quando está inativa */
+  .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+    background-color: #808080; /* Cor cinza para bolinhas inativas */
+  }
+  
+  /* Opacidade da bolinha ativa */
+  .swiper-pagination-bullet-active {
+    background-color: #fc1400; /* Cor da bolinha ativa */
+    opacity: 1; /* Opacidade total da bolinha ativa */
+  }
+  
