@@ -9,9 +9,19 @@
     
     
 }
+body{
+    padding-top: 100px;
+}
+#topo,
+#especialidades,
+#sobre,
+#projetos,
+#contato {
+    scroll-margin-top: 100px;
+}
 
 .logo img{
-    height: 100px;
+    height: 80px;
 }
 
 body{
@@ -47,7 +57,7 @@ button:hover, form .g-enviar input:hover{
 
 /* Estilo do cabeçalho */
 header{
-    padding: 40px 4%;
+    padding: 30px 4%;
 }
 
 header > .interface{
