@@ -240,7 +240,7 @@ header nav.menu-desktop ul li {
       TOPO DO SITE (TEXTO MODERNO + IMAGEM ANTIGA)
       ========================================= */
    section.topo-do-site {
-       padding: 40px 4%; /* Padding do segundo CSS */
+       padding: 80px 4% 200px 4%; /* Padding do segundo CSS */
        margin-top: 50px;
    }
    
@@ -302,8 +302,8 @@ header nav.menu-desktop ul li {
       ESPECIALIDADES (MANTIDO O MODERNO)
       ========================================= */
    section.Especialidades {
-       padding: 80px 4%;
-       background-color: #0f0f0f;
+    padding: 90px 4% 80px 4%;
+    background-color: #0f0f0f;
    }
    
    section.Especialidades .flex {
