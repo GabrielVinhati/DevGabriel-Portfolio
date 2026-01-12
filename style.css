@@ -183,7 +183,9 @@ header nav.menu-desktop ul li {
        z-index: 8888;
        display: none;
    }
-
+   .logo img {
+    height: 45px; 
+}
    .menu-mobile {
        background-color: #000000;
        height: 100vh;
@@ -193,7 +195,7 @@ header nav.menu-desktop ul li {
        z-index: 9999999;
        width: 0%;
        overflow: hidden;
-       transition: .5s;
+       transition: .5s ease-in-out;
    }
 
    .menu-mobile.abrir-menu {
