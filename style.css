@@ -1,15 +1,21 @@
 /* =========================================
-   IMPORTAÇÃO DE FONTE E VARIÁVEIS (Visual Moderno)
+   IMPORTAÇÃO DE FONTE E VARIÁVEIS (Visual Moderno - Blue/Purple Tech)
    ========================================= */
    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
    :root {
-       --color-primary: #fc1400;       /* Vermelho da sua marca */
-       --bg-body: #0a0a0a;             /* Preto suave */
-       --bg-card: #141414;             /* Fundo dos cards */
+       /* Paleta Azul e Roxo */
+       --color-primary: #3b82f6;       /* Azul vibrante base */
+       --color-secondary: #8b5cf6;     /* Roxo vibrante para o gradiente */
+       --bg-body: #020617;             /* Azul muito escuro (quase preto) */
+       --bg-card: #0f172a;             /* Azul escuro acinzentado (Slate) */
+       
        --text-white: #ffffff;
-       --text-gray: #cccccc;
+       --text-gray: #cbd5e1;           /* Cinza azulado claro */
        --font-main: 'Poppins', sans-serif;
+
+       /* Definição do Gradiente Global */
+       --gradient-main: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
    }
    
    /* =========================================
@@ -19,23 +25,21 @@
        margin: 0;
        padding: 0;
        box-sizing: border-box;
-       font-family: var(--font-main); /* Mantendo a fonte bonita do primeiro CSS */
+       font-family: var(--font-main);
    }
    
    html {
        scroll-behavior: smooth;
    }
    
-   /* AJUSTE DO BODY DO SEGUNDO CSS (Para o menu fixo funcionar igual) */
    body {
        background-color: var(--bg-body);
        color: var(--text-white);
        overflow-x: hidden;
-       padding-top: 100px; /* Trazido do segundo CSS */
+       padding-top: 100px;
        height: 100vh;
    }
    
-   /* AJUSTE DO SCROLL MARGIN DO SEGUNDO CSS */
    #topo, #especialidades, #sobre, #projetos, #contato {
        scroll-margin-top: 100px;
    }
@@ -51,7 +55,7 @@
        align-items: center;
    }
    
-   /* Títulos das Seções (Mantido o moderno) */
+   /* Títulos das Seções */
    h2.titulo {
        color: var(--text-white);
        font-size: 38px;
@@ -60,8 +64,13 @@
        font-weight: 700;
    }
    
+   /* Span com efeito de Gradiente no Texto */
    h2.titulo span {
-       color: var(--color-primary);
+       background: var(--gradient-main);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+       color: var(--color-primary); /* Fallback */
    }
    
    /* Botões Gerais */
@@ -70,16 +79,15 @@
        transition: 0.3s ease;
    }
    
-   /* Efeito de hover dos botões (Mantido o do segundo CSS que você já usava no primeiro) */
+   /* Efeito de hover dos botões */
    button:hover, form .g-enviar input:hover {
-       box-shadow: 0px 0px 8px red;
+       box-shadow: 0px 0px 15px rgba(59, 130, 246, 0.6); /* Sombra azul */
        transform: scale(1.05);
-       background-color: var(--color-primary);
-       color: white;
+       /* O background será definido especificamente nos elementos abaixo */
    }
 
   /* =========================================
-   HEADER / NAVBAR (COM EFEITO SUBLINHADO)
+   HEADER / NAVBAR 
    ========================================= */
 
    .logo img {
@@ -93,8 +101,9 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(10, 10, 10, 0.9); 
-    backdrop-filter: blur(5px);
+    background-color: rgba(2, 6, 23, 0.95); /* Ajustado para o azul escuro */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #1e293b;
 }
 
 header > .interface {
@@ -103,28 +112,27 @@ header > .interface {
     justify-content: space-between;
 }
 
-/* --- ALTERAÇÃO AQUI: Links do Menu com Sublinhado --- */
+/* Links do Menu */
 header nav.menu-desktop ul li a {
-    color: rgb(114, 111, 111);
+    color: #94a3b8; /* Cinza azulado */
     text-decoration: none;
     display: inline-block;
     font-weight: 500;
     transition: .2s;
-    position: relative; /* Necessário para a linha se posicionar */
+    position: relative;
 }
 
 header nav.menu-desktop ul li a:hover {
     color: white;
-    /* Removi o scale para a linha não distorcer, fica mais elegante apenas a cor + linha */
 }
 
-/* O EFEITO DA LINHA VERMELHA */
+/* O EFEITO DA LINHA (Agora com Gradiente) */
 header nav.menu-desktop ul li a::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
-    background: #fc1400; /* Vermelho */
+    background: var(--gradient-main); /* Gradiente */
     transition: width 0.3s;
     position: absolute;
     bottom: -5px;
@@ -134,7 +142,6 @@ header nav.menu-desktop ul li a::after {
 header nav.menu-desktop ul li a:hover::after {
     width: 100%;
 }
-/* --- FIM DA ALTERAÇÃO --- */
 
 header nav ul {
     list-style-type: none;
@@ -150,7 +157,7 @@ header nav.menu-desktop ul li {
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
-    background-color: #fc1400;
+    background: var(--gradient-main); /* Gradiente no botão */
     border: 0;
     border-radius: 30px;
     cursor: pointer;
@@ -159,22 +166,23 @@ header nav.menu-desktop ul li {
 }
 
 .g-contato button:hover {
-    box-shadow: 0px 0px 8px red;
+    box-shadow: 0px 0px 15px rgba(139, 92, 246, 0.5); /* Glow roxo/azul */
     transform: scale(1.05);
 }
-   /* MENU MOBILE (Do segundo CSS) */
+
+   /* MENU MOBILE */
    .g-abrir-menu {
        display: none;
    }
 
    .g-abrir-menu i {
-       color: #fc1400;
+       color: var(--color-primary);
        font-size: 40px;
        cursor: pointer;
    }
 
    .overlay-menu {
-       background-color: rgba(0, 0, 0, 0.692);
+       background-color: rgba(0, 0, 0, 0.7);
        width: 100%;
        height: 100%;
        position: fixed;
@@ -187,7 +195,7 @@ header nav.menu-desktop ul li {
     height: 45px; 
 }
    .menu-mobile {
-       background-color: #000000;
+       background-color: var(--bg-body);
        height: 100vh;
        position: fixed;
        top: 0;
@@ -196,6 +204,7 @@ header nav.menu-desktop ul li {
        width: 0%;
        overflow: hidden;
        transition: .5s ease-in-out;
+       border-left: 1px solid #1e293b;
    }
 
    .menu-mobile.abrir-menu {
@@ -208,7 +217,7 @@ header nav.menu-desktop ul li {
 
    .menu-mobile .g-fechar {
        padding: 20px 5%;
-       text-align: right; /* Garante o alinhamento */
+       text-align: right;
    }
 
    .menu-mobile .g-fechar i {
@@ -228,27 +237,27 @@ header nav.menu-desktop ul li {
        font-weight: 300;
        padding: 20px 10%;
        display: block;
-       border-bottom: none; /* Removida a borda do primeiro CSS */
+       border-bottom: none;
    }
 
    .menu-mobile nav ul li a:hover {
-       background-color: #fc1400;
-       color: black;
+       background: var(--gradient-main); /* Gradiente no hover mobile */
+       color: white;
        font-weight: 500;
-       padding-left: 10%; /* Reset do efeito de padding do primeiro CSS */
+       padding-left: 10%;
    }
 
    /* =========================================
-      TOPO DO SITE (TEXTO MODERNO + IMAGEM ANTIGA)
+      TOPO DO SITE
       ========================================= */
    section.topo-do-site {
-       padding: 80px 4% 200px 4%; /* Padding do segundo CSS */
+       padding: 80px 4% 200px 4%;
        margin-top: 50px;
    }
    
    section.topo-do-site .flex {
        justify-content: center;
-       gap: 90px; /* Gap do segundo CSS */
+       gap: 90px;
    }
    
    .topo-do-site .txt-topo-site {
@@ -264,6 +273,11 @@ header nav.menu-desktop ul li {
    
    .topo-do-site .txt-topo-site h1 span {
        color: var(--color-primary);
+       /* Opcional: Efeito gradiente no H1 também */
+       background: var(--gradient-main);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
    }
    
    .topo-do-site .txt-topo-site p {
@@ -273,20 +287,20 @@ header nav.menu-desktop ul li {
        line-height: 1.6;
    }
    
-   /* IMAGEM DO TOPO (EXATAMENTE COMO NO SEGUNDO CSS) */
+   /* IMAGEM DO TOPO */
    .topo-do-site .img-topo-site {
-        position: relative; /* Estrutura básica */
+        position: relative;
    }
 
    .topo-do-site .img-topo-site img {
        position: relative;
        animation: flutuar 2s ease-in-out infinite alternate;
-       /* Removido clip-path, filter e borders do primeiro CSS */
-       height: auto; /* Ajuste para não distorcer se não tiver altura definida */
+       height: auto;
        max-width: 100%;
+       /* Adicionei um leve drop-shadow azul na imagem principal para combinar */
+       filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.2));
    }
    
-   /* Removido o ::after (borda brilhante) */
    .topo-do-site .img-topo-site::after {
        display: none;
    }
@@ -301,11 +315,11 @@ header nav.menu-desktop ul li {
    }
    
    /* =========================================
-      ESPECIALIDADES (MANTIDO O MODERNO)
+      ESPECIALIDADES
       ========================================= */
    section.Especialidades {
     padding: 90px 4% 80px 4%;
-    background-color: #0f0f0f;
+    background-color: #020617; /* Garante fundo escuro */
    }
    
    section.Especialidades .flex {
@@ -319,7 +333,7 @@ header nav.menu-desktop ul li {
        background-color: var(--bg-card);
        padding: 40px 30px;
        border-radius: 15px;
-       border: 1px solid #222;
+       border: 1px solid #1e293b;
        transition: 0.3s;
        text-align: center;
        flex: 1 1 300px;
@@ -329,15 +343,23 @@ header nav.menu-desktop ul li {
    .Especialidades .especialidades-box:hover {
        transform: translateY(-10px);
        border-color: var(--color-primary);
-       box-shadow: 0 10px 30px rgba(252, 20, 0, 0.15);
+       /* Sombra com tom azulado */
+       box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
    }
    
+   /* Ícones com Gradiente */
    .Especialidades .especialidades-box i {
        font-size: 50px;
-       color: var(--color-primary);
        margin-bottom: 20px;
        display: inline-block;
+       
+       background: var(--gradient-main);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+       color: var(--color-primary); /* Fallback */
    }
+
    .Especialidades .especialidades-box img {
        margin-bottom: 20px;
    }
@@ -359,7 +381,7 @@ header nav.menu-desktop ul li {
    }
    
    /* =========================================
-      SOBRE (MANTIDO O MODERNO)
+      SOBRE
       ========================================= */
    section.Sobre {
        padding: 100px 4%;
@@ -375,13 +397,16 @@ header nav.menu-desktop ul li {
        max-width: 450px;
        height: auto;
        border-radius: 20px;
+       /* Borda Gradiente Hack (ou sólida azul) - Vamos usar sólida para manter simples */
        border: 2px solid var(--color-primary);
-       box-shadow: 15px 15px 0px rgba(30, 30, 30, 1);
+       /* Sombra sólida escura */
+       box-shadow: 15px 15px 0px rgba(15, 23, 42, 1); 
        transition: 0.3s;
    }
    
    .Sobre .img-sobre img:hover {
        transform: scale(1.02);
+       box-shadow: 15px 15px 0px var(--color-secondary); /* Sombra roxa no hover */
    }
    
    .Sobre .txt-sobre {
@@ -410,7 +435,7 @@ header nav.menu-desktop ul li {
        height: 50px;
        border-radius: 50%;
        border: none;
-       background-color: #222;
+       background-color: #1e293b;
        color: var(--text-white);
        font-size: 22px;
        cursor: pointer;
@@ -421,16 +446,17 @@ header nav.menu-desktop ul li {
    }
    
    .g-social button:hover {
-       background-color: var(--color-primary);
+       background: var(--gradient-main);
        transform: translateY(-5px);
+       box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
    }
    
    /* =========================================
-      PORTFOLIO (MANTIDO O MODERNO)
+      PORTFOLIO
       ========================================= */
    section.portfolio {
        padding: 80px 4%;
-       background-color: #0f0f0f;
+       background-color: #020617; /* Fundo ajustado */
    }
    
    section.portfolio .flex {
@@ -462,7 +488,7 @@ header nav.menu-desktop ul li {
        border-radius: 15px;
        overflow: hidden;
        cursor: pointer;
-       border: 1px solid #333;
+       border: 1px solid #1e293b;
        transition: transform 0.3s ease;
    }
    
@@ -470,12 +496,14 @@ header nav.menu-desktop ul li {
        transform: scale(1.03);
        background-position: bottom center;
        transition: background-position 5s linear, transform 0.3s ease;
+       border-color: var(--color-primary);
    }
    
    .overlay {
        position: absolute;
        top: 0; left: 0; width: 100%; height: 100%;
-       background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6));
+       /* Overlay azulado escuro */
+       background: linear-gradient(to top, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.7));
        border-radius: 15px;
        display: flex;
        flex-direction: column;
@@ -497,7 +525,7 @@ header nav.menu-desktop ul li {
    }
    .overlay p {
        font-size: 14px;
-       color: #eee;
+       color: #cbd5e1;
    }
    
    /* Setas do Swiper */
@@ -505,7 +533,7 @@ header nav.menu-desktop ul li {
        color: var(--color-primary);
    }
    .swiper-pagination-bullet {
-       background-color: #555;
+       background-color: #475569;
        opacity: 1;
    }
    .swiper-pagination-bullet-active {
@@ -513,7 +541,7 @@ header nav.menu-desktop ul li {
    }
    
    /* =========================================
-      FORMULÁRIO (MANTIDO O MODERNO)
+      FORMULÁRIO
       ========================================= */
    section.formulario {
        padding: 100px 4%;
@@ -531,7 +559,7 @@ header nav.menu-desktop ul li {
    form input, form textarea {
        width: 100%;
        background-color: var(--bg-card);
-       border: 1px solid #333;
+       border: 1px solid #1e293b;
        outline: 0;
        padding: 15px;
        border-radius: 10px;
@@ -542,7 +570,8 @@ header nav.menu-desktop ul li {
    
    form input:focus, form textarea:focus {
        border-color: var(--color-primary);
-       background-color: #1a1a1a;
+       background-color: #1e293b;
+       box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
    }
    
    form textarea {
@@ -554,7 +583,7 @@ header nav.menu-desktop ul li {
    form .g-enviar input[type=submit] {
        width: auto;
        padding: 15px 50px;
-       background-color: var(--color-primary);
+       background: var(--gradient-main); /* Gradiente no botão de enviar */
        color: white;
        font-weight: 700;
        border: none;
@@ -565,12 +594,12 @@ header nav.menu-desktop ul li {
    }
    
    /* =========================================
-      RODAPÉ (MANTIDO O MODERNO)
+      RODAPÉ
       ========================================= */
    footer {
        padding: 60px 4%;
-       background-color: #050505;
-       border-top: 1px solid #222;
+       background-color: #020617;
+       border-top: 1px solid #1e293b;
        box-shadow: none;
    }
    
@@ -588,7 +617,7 @@ header nav.menu-desktop ul li {
    }
    
    .borda {
-       border-top: 1px solid #333;
+       border-top: 1px solid #1e293b;
        margin-top: 30px;
        padding-top: 20px;
    }
@@ -616,7 +645,7 @@ header nav.menu-desktop ul li {
    }
    
    /* =========================================
-      RESPONSIVIDADE (MISTO: HEADER DO 2º, RESTO DO 1º)
+      RESPONSIVIDADE
       ========================================= */
    @media screen and (max-width: 1020px) {
        /* Geral Mobile */
@@ -624,7 +653,7 @@ header nav.menu-desktop ul li {
            flex-direction: column;
        }
        
-       /* Menu Mobile (Comportamento do segundo CSS) */
+       /* Menu Mobile */
        .g-abrir-menu {
            display: block;
        }
@@ -640,13 +669,13 @@ header nav.menu-desktop ul li {
        }
    
        .topo-do-site .flex {
-           flex-direction: column-reverse; /* Texto embaixo da imagem */
+           flex-direction: column-reverse;
            gap: 40px;
        }
    
        .topo-do-site .img-topo-site img {
            height: auto;
-           width: 100%; /* Ajuste mobile */
+           width: 100%;
        }
    
        .txt-topo-site {
